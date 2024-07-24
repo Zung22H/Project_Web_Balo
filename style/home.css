@@ -1,0 +1,105 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container > header{
+
+    background-size:auto;  
+    height:0px;  
+    padding-bottom:10%;
+    padding: 20px; 
+    width: 100%;
+} 
+
+
+ 
+.logo {
+    width: 55px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+    background-color: aliceblue;
+}
+ 
+
+
+.navbar {
+    background-color:rgb(102, 0, 255); 
+    overflow: hidden;       
+  }
+  
+ 
+  .navbar ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    display: flex;         
+    justify-content: center; 
+  }
+  
+  
+  .navbar li {
+    float: left;           
+  }
+  
+  
+  .navbar a {
+    display: inline-block;        
+    color: white;          
+    text-align: center;    
+    padding: 14px 20px;   
+    text-decoration: none; 
+  }
+  
+  
+  .navbar a:hover {
+    background-color: #ddd; 
+    color: black;           
+  }
+  
+
+ /* Kiểu dáng cho thanh tìm kiếm */
+.search-bar {
+    display: flex;             /* Sắp xếp các phần tử theo hàng ngang */
+    align-items: center;      /* Căn giữa theo chiều dọc */
+    background-color: #f0f0f0; /* Màu nền */
+    border-radius: 5px;        /* Bo tròn góc */
+    overflow: hidden;          /* Ẩn phần tràn ra ngoài */
+  }
+  
+  /* Kiểu dáng cho ô input */
+  .search-bar input[type="text"] {
+    flex: 1;                   /* Chiếm toàn bộ không gian còn lại */
+    padding: 10px;             /* Khoảng cách bên trong */
+    border: none;              /* Không viền */
+    outline: none;             /* Loại bỏ viền focus */
+  }
+  
+  /* Kiểu dáng cho nút tìm kiếm */
+  .search-bar button {
+    background-color: #007bff; /* Màu nền */
+    color: white;              /* Màu chữ */
+    padding: 10px 15px;        /* Khoảng cách bên trong */
+    border: none;              /* Không viền */
+    cursor: pointer;          /* Biến thành con trỏ khi di chuột qua */
+  }
+  .search-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+    
+  
+  

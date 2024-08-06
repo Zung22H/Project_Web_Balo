@@ -9,7 +9,7 @@
 <body>
 <header>
     <div class="logo">
-        <img src="img/logo.jpg" width="80px" height="80px">
+        <a href="home.html"><img src="img/logo.jpg" width="80px" height="80px"></a>
     </div>
     <div class="menu">
         <li><a href="#">Thể thao</a>
@@ -33,7 +33,7 @@
     <div class="others">
         <li class="searching">
             <input type="text" id="searchinput" placeholder="Search......">
-            <button onclick="searchfunction()">Tìm kiếm</button>
+            <button onclick="searchfunction()">Tìm Kiếm</button>
             <div id="searchresults"></div>
         </li>
         <li>
@@ -44,5 +44,50 @@
         <script src="home.js"></script>
     </div>
 </header>
+<section id="Slider">
+<div class="aspect-ratio-169">
+    <img src="img/slide1.jpg" >
+    <img src="img/slide2.jpg" >
+    <img src="img/slide3.jpg" >
+    <img src="img/slide4.jpg" >
+    <img src="img/slide5.jpg" >
+</div>
+<div class="dot-container">
+    <div class="dot active"></div>
+    <div class="dot " ></div>
+    <div class="dot "></div>
+    <div class="dot "></div>
+    <div class="dot "></div>
+</div>
+</section>
 </body>
+<SCript>
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
+    const imgContainer = document.querySelector(".aspect-ratio-169 ");
+    const dotItem = document.querySelectorAll(".dot");
+    let imgNumber = imgPosition.length;
+    let index = 0;
+    imgPosition.forEach(function(image,index){
+        image.style.left = index*100 + "%";
+        dotItem[index].addEventListener("click",function(){
+            slider(index);
+        })
+        
+    })
+
+    function imgSlide (){
+        index++;
+        console.log(index);
+        if(index>=imgNumber) {index=0};
+        slider(index);
+    }
+    function slider(index){
+        imgContainer.style.left =  "-" + index*100 + "%";
+        const dotActive = document.querySelector(".active")
+        dotActive.classList.remove("active");
+        dotItem[index].classList.add("active");
+    }
+
+    setInterval(imgSlide,5000);
+</SCript>
 </html>

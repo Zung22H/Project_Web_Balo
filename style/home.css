@@ -47,7 +47,7 @@ header{
 
 .menu>li:hover .sub-menu {
   visibility: visible;
-  top: 30px;
+  top: 80px;
 }
 
 .sub-menu{

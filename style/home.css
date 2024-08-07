@@ -25,7 +25,11 @@ header{
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: rgba(225 , 225 , 225 , 0.3);
+  background-color: rgba(255 , 255 , 255 , 0.3);
+}
+
+header:hover {
+  background: rgba(255 , 255 , 255 , 1);
 }
 
 .logo{
@@ -50,7 +54,7 @@ header{
 }
 
 .menu>li>a{
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   display: block;
   line-height: 20px;
@@ -59,7 +63,7 @@ header{
 
 .menu>li:hover .sub-menu {
   visibility: visible;
-  top: 40px;
+  top: 50px;
 }
 
 .sub-menu{
@@ -68,7 +72,7 @@ header{
   border: 1px solid  #ccc;
   padding: 10px 0 10px 20px;
   visibility: hidden;
-  top:50px;
+  top:60px;
   transition: 0.1s ease;
   z-index: 1;
   background: #fff;
@@ -98,7 +102,7 @@ header{
  }
 
  button {
-  padding: 10px;
+  padding: 12px;
   border: none;
   background-color: rgba(47, 30, 18, 0.741);
   color: white;
@@ -155,13 +159,13 @@ header{
 .dot {
   height: 15px;
   width: 15px;
-  background-color: #1f459d;
+  background-color: #808081;
   border-radius: 50%;
   margin-right: 12px;
   cursor: pointer;
 }
 .dot.active {
-  background-color:rgb(98, 98, 245);
+  background-color:rgb(34, 34, 34);
 }
 
 .app-container {
@@ -180,7 +184,7 @@ header{
 .app-container input {
   margin-top: 20px;
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #472525d5;
   padding-bottom: 20px;
   width: 400px;
   text-align: center;
@@ -213,5 +217,7 @@ header{
 {
   margin: 20px 0;
   text-align: center;
+  font-style: italic;
+  font-weight: bolder;
 }
   

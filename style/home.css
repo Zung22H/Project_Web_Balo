@@ -99,7 +99,7 @@ header{
  button {
   padding: 10px;
   border: none;
-  background-color: rgb(19, 114, 247);
+  background-color: rgba(47, 30, 18, 0.741);
   color: white;
   border-radius: 4px;
   cursor: pointer;
@@ -107,7 +107,7 @@ header{
  }
 
  button:hover {
-  background-color: #0c2c9f;
+  background-color: #c48b3a51;
 }
 
 #searchResults {

@@ -4,13 +4,13 @@ function searchfunction() {
 
     
     let items = [
-        'apple',
-        'banana',
-        'cherry',
-        'date',
-        'elderberry',
-        'fig',
-        'grape'
+        'nike',
+        'adidas',
+        'puma',
+        'simple carry',
+        'túi du lịch',
+        'balo đựng laptop'
+        
     ];
 
     // Clear previous results

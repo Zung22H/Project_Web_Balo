@@ -7,31 +7,49 @@
     <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
-    <img src="img/logo.jpg" width="80" height="80">
-    <a href="home.html"> Home</a>
-    <a href="form_register.html">Register</a>
-    <a href="form_login.html"> Login</a>
-    <form >
-        <div>
-            <label for="user_login">User Name:</label><br>
-            <input id="user_login" name="user_login" type="text"><br>
-        </div>
-        <div>
-            <label for="pass">Password:</label><br>
-            <input id="pass" name="pass" type="password"><br>
-        </div>
-        <div>
-            <label><input type="checkbox" name="remember">Keep me signed in</label>
-        </div>
-        
-        <div>
-            <label><input type="checkbox" name="privacy">I have read, understood and accept the BestBag Privacy Policy</label>
-        </div>
-        <hr width="400" align="left">
-        <div>
-            <button>Login</button>
-        </div>
-        
+    <div class="logo">
+        <img src="img/logo.jpg" width="80px" height="80px">
+    </div>
+    
+    
+    <form>
+        <!--Modal Layout -->
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__body">
+                <!--Authen form-->
+                <div class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng nhập</h3>
+                            <a href="form_register.html"><span class="auth-form__switch-btn">Đăng kí</span></a>
+                        </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input" placeholder="Nhập Email của bạn">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input" placeholder="Nhập mật khẩu">
+                            </div>
+                        
+                        </div>
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">Bạn đồng ý với những</p>
+                            <a href="#" class="auth-form__text-link">điều khoản dịch vụ</a>&
+                            <a href="#" class="auth-form__text-link">chính sách bảo mật của BestBag</a>
+                        </div>
+                        
+                        <div class="auth-form__controls">
+                            <a href="form_register.html" class="button-log-res">TRỞ LẠI</a>
+                        
+                            <a href="home.html" class="button-log-res">ĐĂNG Nhập</a>
+                            
+                        </div>
+                    </div> 
+                </div>    
+            </div> 
+        </div> 
+
     </form>
 
 </body>

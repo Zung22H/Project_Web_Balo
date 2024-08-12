@@ -31,9 +31,12 @@ function searchfunction() {
     }
 }
 
+
+
 function goToAccount() {
     // Logic to go to the account page
-    alert('Going to Account Page!');
+    
+    window.location.href = 'form_login.html';
     // You can replace the above line with actual navigation logic like:
     // window.location.href = 'account.html';
 }

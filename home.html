@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
+<!-----------------------Header----------------------->
 <header>
     <div class="logo">
         <a href="home.html"><img src="img/logo.jpg" width="80px" height="80px"></a>
     </div>
     <div class="menu">
+        <li><a href="product_page.html">Sản Phẩm</a></li>
         <li><a href="#">Thể thao</a>
             <ul class="sub-menu">
                 <li><a href="#">Adidas</a></li>
@@ -21,14 +23,11 @@
                 <li><a href="#">Vans</a></li>
                 <li><a href="#">Converse</a></li>
             </ul>
-
         </li>
         <li><a href="#">Balo Laptop</a></li>
         <li><a href="#">Túi du lịch</a></li>
         <li><a href="#">Thông tin</a></li>
-        <li><a href="#">Liên hệ</a></li>
         
-
     </div>
     <div class="others">
         <li class="searching">
@@ -44,6 +43,8 @@
         <script src="home.js"></script>
     </div>
 </header>
+
+<!----------------------Slider--------------------->
 <section id="Slider">
 <div class="aspect-ratio-169">
     <img src="img/slide1.jpg" >
@@ -62,29 +63,44 @@
 </section>
 
 <section class="app-container">
-    <p>Nhận thông tin khuyến mãi từ BestBag</p>
-    <input type="text" placeholder="Mời bạn nhập email.......">
+
 </section>
 
+
+<!-- --------------------------Product---------------------------
+<section class="product">
+    <div class="container">
+        <div class="product-img">
+            <img src="product_img/Ba_Lo_Classic.jpg" alt="">
+    </div>
+</section>
+<section class="app-container">
+    <p>Nhận thông tin khuyến mãi từ BestBag</p>
+    <input type="text" placeholder="Mời bạn nhập email.......">
+</section> -->
+
+
+
+<!-------------------------Footer------------------------------>
 <footer>
-<div class="footer-top">
-    <li><a href="">Liên hệ</a></li>
-    <li><a href="">Giới thiệu</a></li>
-</div>
-<div class="footer-middle">
-    <p>Đây là website chuyên cung cấp các mẫu mã Balo <br> 
-Do hai sinh viên Hồ Chí Dũng và Phạm Tân Tiến 
-    thuộc trường Đại học Giao thông Vận tải TP.HCM thực hiện <br>
-Mọi thắc mác xin liên hệ qua email:<b>2251120408@ut.edu.vn </b>  </p>
+    <div class="footer-top">
+        <li><a href="">Liên hệ</a></li>
+        <li><a href="">Giới thiệu</a></li>
+    </div>
+    <div class="footer-middle">
+        <p>Đây là website chuyên cung cấp các mẫu mã Balo <br> 
+    Do hai sinh viên Hồ Chí Dũng và Phạm Tân Tiến 
+        thuộc trường Đại học Giao thông Vận tải TP.HCM thực hiện <br>
+    Mọi thắc mác xin liên hệ qua email:<b>2251120408@ut.edu.vn </b>  </p>
 
-</div>
+    </div>
 
-<div class="footer-bottom">
-    BestBag All rights reserved
-</div>
+    <div class="footer-bottom">
+        BestBag All rights reserved
+    </div>
 </footer>
 </body>
-<SCript>
+<script>
     const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
     const imgContainer = document.querySelector(".aspect-ratio-169 ");
     const dotItem = document.querySelectorAll(".dot");
@@ -112,5 +128,5 @@ Mọi thắc mác xin liên hệ qua email:<b>2251120408@ut.edu.vn </b>  </p>
     }
 
     setInterval(imgSlide,5000);
-</SCript>
+</script>
 </html>

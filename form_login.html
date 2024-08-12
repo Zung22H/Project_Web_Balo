@@ -3,36 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Bag</title>
+    <title>Best Bag - Đăng Nhập</title>
     <link rel="stylesheet" href="style/home.css">
+    <style>
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <img src="img/logo.jpg" width="80" height="80">
-    <a href="home.html"> Home</a>
-    <a href="form_register.html">Register</a>
-    <a href="form_login.html"> Login</a>
-    <form >
-        <div>
-            <label for="user_login">User Name:</label><br>
-            <input id="user_login" name="user_login" type="text"><br>
-        </div>
-        <div>
-            <label for="pass">Password:</label><br>
-            <input id="pass" name="pass" type="password"><br>
-        </div>
-        <div>
-            <label><input type="checkbox" name="remember">Keep me signed in</label>
-        </div>
-        
-        <div>
-            <label><input type="checkbox" name="privacy">I have read, understood and accept the BestBag Privacy Policy</label>
-        </div>
-        <hr width="400" align="left">
-        <div>
-            <button>Login</button>
-        </div>
-        
+    <div class="logo">
+        <img src="img/logo.jpg" width="80px" height="80px">
+    </div>
+
+    <form id="loginForm">
+        <!--Modal Layout -->
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__body">
+                <!--Authen form-->
+                <div class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng nhập</h3>
+                            <a href="form_register.html"><span class="auth-form__switch-btn">Đăng kí</span></a>
+                        </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" id="email" class="auth-form__input" placeholder="Nhập Email của bạn">
+                                <div id="emailError" class="error-message">Email không hợp lệ.</div>
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" id="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                                <div id="passwordError" class="error-message">Mật khẩu phải từ 8 đến 15 ký tự và có ít nhất một chữ in hoa.</div>
+                            </div>
+                        </div>
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">Bạn đồng ý với những</p>
+                            <a href="#" class="auth-form__text-link">điều khoản dịch vụ</a>&
+                            <a href="#" class="auth-form__text-link">chính sách bảo mật của BestBag</a>
+                        </div>
+                        
+                        <div class="auth-form__controls">
+                            <a href="form_register.html" class="button-log-res">TRỞ LẠI</a>
+                            <button type="submit" class="button-log-res">ĐĂNG NHẬP</button>
+                        </div>
+                    </div> 
+                </div>    
+            </div> 
+        </div> 
     </form>
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const passwordInput = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Định dạng email
+            const passwordPattern = /^(?=.*[A-Z]).{8,15}$/; // Mật khẩu từ 8 đến 15 ký tự và có ít nhất một chữ in hoa
+
+            let valid = true;
+
+            // Kiểm tra email
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.style.display = 'block'; // Hiện thông báo lỗi
+                setTimeout(() => {
+                    emailError.style.display = 'none'; // Ẩn thông báo sau 10 giây
+                }, 10000);
+                valid = false;
+            } else {
+                emailError.style.display = 'none'; // Ẩn thông báo nếu email hợp lệ
+            }
+
+            // Kiểm tra mật khẩu
+            if (!passwordPattern.test(passwordInput.value)) {
+                passwordError.style.display = 'block'; // Hiện thông báo lỗi
+                setTimeout(() => {
+                    passwordError.style.display = 'none'; // Ẩn thông báo sau 10 giây
+                }, 10000);
+                valid = false;
+            } else {
+                passwordError.style.display = 'none'; // Ẩn thông báo nếu mật khẩu hợp lệ
+            }
+
+            // Nếu tất cả đều hợp lệ
+            if (valid) {
+                alert('Đăng nhập thành công!');
+                window.location.href = 'home.html'; // Chuyển hướng đến trang chính
+            }
+        });
+    </script>
 </body>
 </html>

@@ -129,7 +129,7 @@ header:hover {
   cursor: pointer; 
   transition: background-color 0.3s; 
   margin-right: 20px;
-  margin-top:40px;
+  margin-top:20px;
 }
 
 .button-log-res:hover {

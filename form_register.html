@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Bag</title>
     <link rel="stylesheet" href="style/home.css">
-    
+    <style>
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="logo">
         <img src="img/logo.jpg" width="80px" height="80px">
     </div>
-    
 
-    <form>
+    <form id="registrationForm">
         <!--Modal Layout -->
         <div class="modal">
             <div class="modal__overlay"></div>
@@ -27,13 +31,16 @@
                         </div>
                         <div class="auth-form__form">
                             <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" placeholder="Nhập Email của bạn">
+                                <input type="text" id="email" class="auth-form__input" placeholder="Nhập Email của bạn">
+                                <div id="emailError" class="error-message">Email không hợp lệ.</div>
                             </div>
                             <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" placeholder="Nhập mật khẩu">
+                                <input type="password" id="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                                <div id="passwordError" class="error-message">Mật khẩu phải từ 8 đến 15 ký tự và có ít nhất một chữ in hoa.</div>
                             </div>
                             <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                                <input type="password" id="confirmPassword" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                                <div id="confirmPasswordError" class="error-message">Mật khẩu không khớp.</div>
                             </div>
                         </div>
                         <div class="auth-form__aside">
@@ -44,16 +51,68 @@
                         
                         <div class="auth-form__controls">
                             <a href="home.html" class="button-log-res">TRỞ LẠI</a>
-                        
-                            <a href="form_login.html" class="button-log-res">ĐĂNG KÍ</a>
-                            
+                            <button type="submit" class="button-log-res">ĐĂNG KÍ</button>
                         </div>
                     </div> 
                 </div>    
             </div> 
         </div> 
-
     </form>
-    
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const passwordInput = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Định dạng email
+            const passwordPattern = /^(?=.*[A-Z]).{8,15}$/; // Mật khẩu từ 8 đến 15 ký tự và có ít nhất một chữ in hoa
+
+            let valid = true;
+
+            // Kiểm tra email
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.style.display = 'block'; // Hiện thông báo lỗi
+                setTimeout(() => {
+                    emailError.style.display = 'none'; // Ẩn thông báo sau 10 giây
+                }, 10000);
+                valid = false;
+            } else {
+                emailError.style.display = 'none'; // Ẩn thông báo nếu email hợp lệ
+            }
+
+            // Kiểm tra mật khẩu
+            if (!passwordPattern.test(passwordInput.value)) {
+                passwordError.style.display = 'block'; // Hiện thông báo lỗi
+                setTimeout(() => {
+                    passwordError.style.display = 'none'; // Ẩn thông báo sau 10 giây
+                }, 10000);
+                valid = false;
+            } else {
+                passwordError.style.display = 'none'; // Ẩn thông báo nếu mật khẩu hợp lệ
+            }
+
+            // Kiểm tra xác nhận mật khẩu
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                confirmPasswordError.style.display = 'block'; // Hiện thông báo lỗi
+                setTimeout(() => {
+                    confirmPasswordError.style.display = 'none'; // Ẩn thông báo sau 10 giây
+                }, 10000);
+                valid = false;
+            } else {
+                confirmPasswordError.style.display = 'none'; // Ẩn thông báo nếu mật khẩu khớp
+            }
+
+            // Nếu tất cả đều hợp lệ
+            if (valid) {
+                alert('Đăng ký thành công!');
+                window.location.href = 'form_login.html'; // Chuyển hướng đến trang đăng nhập
+            }
+        });
+    </script>
 </body>
 </html>

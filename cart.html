@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link rel="stylesheet" href="style/home.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+        .item-details img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Giỏ Hàng Của Bạn</h1>
+        <div id="cartItems"></div>
+        <div class="total">
+            <p>Tổng Cộng: <span id="totalAmount">0đ</span></p>
+        </div>
+        <a href="payment.html" class="button-log-res">Thanh Toán</a>
+    </div>
+
+    <script>
+        
+
+        
+        function displayCart() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = '';
+
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Giỏ hàng của bạn đang trống.</p>';
+            } else {
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    cartItemsDiv.innerHTML += `
+                        <div class="cart-item">
+                            <div class="item-details">
+                                <img src="${item.image}" alt="${item.name}">
+                                <div>
+                                    <strong>${item.name}</strong><br>
+                                    KÍCH CỠ: NS<br>
+                                    <span>${item.price.toLocaleString('vi-VN')}đ</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span>${item.quantity} x ${item.price.toLocaleString('vi-VN')}đ</span>
+                                <button onclick="removeItem('${item.name}')">Xóa</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            document.getElementById('totalAmount').textContent = total.toLocaleString('vi-VN') + 'đ';
+        }
+
+        
+        function removeItem(itemName) {
+            const index = cart.findIndex(item => item.name === itemName);
+            if (index > -1) {
+                cart.splice(index, 1);
+                displayCart();
+            }
+        }
+
+        
+        
+
+        
+        displayCart();
+    </script>
+</body>
+</html>

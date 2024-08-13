@@ -43,7 +43,7 @@ function goToAccount() {
 
 function goToCart() {
     // Logic to go to the cart page
-    alert('Going to Cart Page!');
+    window.location.href = 'cart.html';
     // You can replace the above line with actual navigation logic like:
     // window.location.href = 'cart.html';
 }

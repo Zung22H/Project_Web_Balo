@@ -35,7 +35,7 @@
                         <td>
                             <?php echo $result['cartegory_name'] ?>
                         </td>
-                        <td><a href="">Sửa</a> <a href="">Xóa</a></td>
+                        <td><a href="cartegoryedit.php?cartegory_id=<?php echo $result['cartegory_id']?>">Sửa</a> <a href="cartegorydelete.php?cartegory_id=<?php echo $result['cartegory_id'] ?>">Xóa</a></td>
                     </tr>
                     <?php
                     }

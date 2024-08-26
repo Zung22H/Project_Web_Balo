@@ -3,8 +3,8 @@
             <ul>
                 <li><a href="#"> Danh mục </a>
                     <ul>
-                        <li><a href="">Thêm danh mục</a></li>
-                        <li><a href="">Danh sách danh mục</a></li>
+                        <li><a href="cartegoryadd.php">Thêm danh mục</a></li>
+                        <li><a href="cartegorylist.php">Danh sách danh mục</a></li>
                     </ul>
                 </li>
                 <li><a href="#"> Loại sản phẩm  </a>

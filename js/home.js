@@ -31,8 +31,6 @@ function searchfunction() {
     }
 }
 
-
-
 function goToAccount() {
     // Logic to go to the account page
     
@@ -43,7 +41,6 @@ function goToAccount() {
 
 function goToCart() {
     // Logic to go to the cart page
-    window.location.href = 'cart.html';
     // You can replace the above line with actual navigation logic like:
     // window.location.href = 'cart.html';
 }

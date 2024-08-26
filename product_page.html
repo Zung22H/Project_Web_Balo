@@ -6,67 +6,76 @@
     <title>Best Bag</title>
     <link rel="stylesheet" href="style/home.css">
 </head>
-    <body>
-    <!-----------------------Header----------------------->
-    <header>
-        <div class="logo">
-            <a href="home.html"><img src="img/logo.jpg" width="80px" height="80px"></a>
-        </div>
-        <div class="menu">
-            <li><a href="product_page.html">Sản Phẩm</a></li>
-            <li><a href="#">Thể thao</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Adidas</a></li>
-                    <li><a href="#">Nike</a></li>
-                    <li><a href="#">Puma</a></li>
-                    <li><a href="#">SimpleCarry</a></li>
-                    <li><a href="#">Vans</a></li>
-                    <li><a href="#">Converse</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Balo Laptop</a></li>
-            <li><a href="#">Túi du lịch</a></li>
-            <li><a href="#">Thông tin</a></li>
-            
-        </div>
-        <div class="others">
-            <li class="searching">
-                <input type="text" id="searchinput" placeholder="Search......">
-                <button onclick="searchfunction()">Tìm Kiếm</button>
-                <div id="searchresults"></div>
-            </li>
-            <li>
-                <button onclick="goToCart()">Giỏ hàng</button>
-            </li>
-            <li><button onclick="goToAccount()">Tài khoản</button></li>
-            
-            <script src="home.js"></script>
-        </div>
-    </header>   
+<body>
+<!-----------------------Header----------------------->
+<header>
+    <div class="logo">
+        <a href="home.html"><img src="img/logo.jpg" width="80px" height="80px"></a>
+    </div>
+
+    <div class="menu">
+        <li><a href="product_page.html">Sản Phẩm</a></li>
+        <li><a href="#">Thể thao</a>
+            <ul class="sub-menu">
+                <li><a href="#">Adidas</a></li>
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">Puma</a></li>
+                <li><a href="#">SimpleCarry</a></li>
+                <li><a href="#">Vans</a></li>
+                <li><a href="#">Converse</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Balo Laptop</a></li>
+        <li><a href="#">Túi du lịch</a></li>
+        <li><a href="#">Thông tin</a></li>       
+    </div>
+
+    <div class="others">
+        <li class="searching">
+            <input type="text" id="searchinput" placeholder="Search......">
+            <button class="search-btn" onclick="searchfunction()">Tìm Kiếm</button>
+            <div id="searchresults"></div>
+        </li>
+        <li>
+            <a href="cart.html"><button class="cart-btn" onclick="goToCart()">Giỏ hàng</button></a>
+        </li>
+        <li><a href="form_register.html"><button class="acct-btn">Tài khoản</button></a></li>
+        
+        <script src="js/home.js"></script>
+    </div>
+</header> 
 
 <!-------------------------Product---------------------------->
     <section class="product">
         <div class="container">
             <div class="product">
-                <img src="product_img//Adidas/Ba_Lo_adidas_Disney_Lion_King_Xam.jpg">
+                <a href="product_detail.html?html=product1">
+                    <img src="product_img/Adidas/Ba_Lo_adidas_Disney_Lion_King_Xam.jpg" alt="Balo Adidas x Lion King">
+                </a>
                 <h3>Balo Adidas x Lion King</h3>
                 <div class="price">990.000đ</div>
                 <div class="type">Thể thao</div>
             </div>
             <div class="product">
-                <img src="product_img/Adidas/Ba_Lo_Classic.jpg">
+                <a href="product_detail.html?html=product2">
+                    <img src="product_img/Adidas/Ba_Lo_Classic.jpg">
+                </a>
                 <h3>Balo Adidas Classic</h3>
                 <div class="price">800.000đ</div>
                 <div class="type">Thể theo</div>
             </div>
             <div class="product">
-                <img src="product_img/Adidas/Ba_Lo_Linear_Essentials.jpg">
+                <a href="product_detail.html?html=product3">
+                    <img src="product_img/Adidas/Ba_Lo_Linear_Essentials.jpg">
+                </a>
                 <h3>Ba Lô Linear Essentials</h3>
                 <div class="price">750.000đ</div>
                 <div class="type">Thể thao</div>
             </div>
             <div class="product">
-                <img src="product_img/Adidas/Ba_Lo_Power.jpg">
+                <a href="product_detail.html?html=product4">
+                    <img src="product_img/Adidas/Ba_Lo_Power.jpg">
+                </a>
                 <p>Ba Lô Power</p>
                 <div class="price">650.000đ</div>
                 <div class="type">Thể theo</div>
@@ -261,5 +270,7 @@
             BestBag All rights reserved
         </div>
     </footer>
+
+    <script src="cart.js"></script>
 </body>
 </html>

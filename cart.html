@@ -3,115 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ Hàng</title>
+    <title>Best Bag</title>
     <link rel="stylesheet" href="style/home.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
-        
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .cart-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .item-details {
-            display: flex;
-            align-items: center;
-        }
-        .item-details img {
-            width: 80px;
-            height: 80px;
-            margin-right: 10px;
-        }
-        .total {
-            text-align: right;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-       
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Giỏ Hàng Của Bạn</h1>
-        <div id="cartItems"></div>
-        <div class="total">
-            <p>Tổng Cộng: <span id="totalAmount">0đ</span></p>
-        </div>
-        <a href="payment.html" class="button-log-res">Thanh Toán</a>
+<!-----------------------Header----------------------->
+<header>
+    <div class="logo">
+        <a href="home.html"><img src="img/logo.jpg" width="80px" height="80px"></a>
     </div>
 
-    <script>
+    <div class="menu">
+        <li><a href="product_page.html">Sản Phẩm</a></li>
+        <li><a href="#">Thể thao</a>
+            <ul class="sub-menu">
+                <li><a href="#">Adidas</a></li>
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">Puma</a></li>
+                <li><a href="#">SimpleCarry</a></li>
+                <li><a href="#">Vans</a></li>
+                <li><a href="#">Converse</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Balo Laptop</a></li>
+        <li><a href="#">Túi du lịch</a></li>
+        <li><a href="#">Thông tin</a></li>       
+    </div>
+
+    <div class="others">
+        <li class="searching">
+            <input type="text" id="searchinput" placeholder="Search......">
+            <button class="search-btn" onclick="searchfunction()">Tìm Kiếm</button>
+            <div id="searchresults"></div>
+        </li>
+        <li>
+            <a href="cart.html"><button class="cart-btn" onclick="goToCart()">Giỏ hàng</button></a>
+        </li>
+        <li><a href="form_register.html"><button class="acct-btn">Tài khoản</button></a></li>
         
+        <script src="js/home.js"></script>
+    </div>
+</header>
 
-        
-        function displayCart() {
-            const cartItemsDiv = document.getElementById('cartItems');
-            cartItemsDiv.innerHTML = '';
 
-            let total = 0;
+<!-------------------------CART------------------------------>
+<section class="cart">
+    <div class="cart-content">
+        <div class="cart-content-left">
+            <h1>GIỎ HÀNG CỦA BẠN</h1>
+            <table>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xóa</th>
+                </tr>
 
-            if (cart.length === 0) {
-                cartItemsDiv.innerHTML = '<p>Giỏ hàng của bạn đang trống.</p>';
-            } else {
-                cart.forEach(item => {
-                    total += item.price * item.quantity;
-                    cartItemsDiv.innerHTML += `
-                        <div class="cart-item">
-                            <div class="item-details">
-                                <img src="${item.image}" alt="${item.name}">
-                                <div>
-                                    <strong>${item.name}</strong><br>
-                                    KÍCH CỠ: NS<br>
-                                    <span>${item.price.toLocaleString('vi-VN')}đ</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span>${item.quantity} x ${item.price.toLocaleString('vi-VN')}đ</span>
-                                <button onclick="removeItem('${item.name}')">Xóa</button>
-                            </div>
-                        </div>
-                    `;
-                });
-            }
+                <tr>
+                    <td><img src="product_img/Adidas/Ba_Lo_adidas_Disney_Lion_King_Xam.jpg"></td>
+                    <td><p>Balo Adidas x Lion King</p></td>
+                    <td><input type="number" min="1" value="1"></td>
+                    <td><p>990.000đ</p></td>
+                    <td><span>X</span></td>
+                </tr>
+            </table>
+        </div>
 
-            document.getElementById('totalAmount').textContent = total.toLocaleString('vi-VN') + 'đ';
-        }
+        <div class="cart-content-right">
+            <h1>TỔNG TIỀN GIỎ HÀNG</h1>
+            <table>
+                <tr>
+                    <td>TỔNG SẢN PHẨM</td>
+                    <td>1</td>
+                </tr>
 
-        
-        function removeItem(itemName) {
-            const index = cart.findIndex(item => item.name === itemName);
-            if (index > -1) {
-                cart.splice(index, 1);
-                displayCart();
-            }
-        }
+                <tr>
+                    <td>TỔNG TIỀN HÀNG</td>
+                    <td><p>990.00đ</p></td>
+                </tr>
+            </table>
 
-        
-        
+            <div class="cart-content-right-button">
+                <button>Tiếp tục mua sắm</button>
+                <button class="payment-btn"><p>THANH TOÁN</p><span>➔</span></button>
+            </div>
 
-        
-        displayCart();
-    </script>
+            <div class="cart-content-right-login">
+                <p><a href="form_login.html">Đăng nhập</a> tài khoản để nhận thêm ưu đãi</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-------------------------Footer------------------------------>
+<hr>
+
+<footer>
+    <div class="footer-top">
+        <li><a href="">Liên hệ</a></li>
+        <li><a href="">Giới thiệu</a></li>
+    </div>
+    <div class="footer-middle">
+        <p>Đây là website chuyên cung cấp các mẫu mã Balo <br> 
+        Do hai sinh viên Hồ Chí Dũng và Phạm Tân Tiến 
+        thuộc trường Đại học Giao thông Vận tải TP.HCM thực hiện <br>
+        Mọi thắc mác xin liên hệ qua email:<b>2251120408@ut.edu.vn </b>  </p>
+    </div>
+    <div class="footer-bottom">
+        BestBag All rights reserved
+    </div>
+</footer>
 </body>
 </html>

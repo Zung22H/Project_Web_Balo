@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Bag</title>
+    <link rel="stylesheet" href="style/home.css">
+</head>
+<body>
+<!-----------------------Header----------------------->
+<header>
+    <div class="logo">
+        <a href="home.html"><img src="img/logo.jpg" width="80px" height="80px"></a>
+    </div>
+
+    <div class="menu">
+        <li><a href="product_page.html">Sản Phẩm</a></li>
+        <li><a href="#">Thể thao</a>
+            <ul class="sub-menu">
+                <li><a href="#">Adidas</a></li>
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">Puma</a></li>
+                <li><a href="#">SimpleCarry</a></li>
+                <li><a href="#">Vans</a></li>
+                <li><a href="#">Converse</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Balo Laptop</a></li>
+        <li><a href="#">Túi du lịch</a></li>
+        <li><a href="#">Thông tin</a></li>       
+    </div>
+
+    <div class="others">
+        <li class="searching">
+            <input type="text" id="searchinput" placeholder="Search......">
+            <button class="search-btn" onclick="searchfunction()">Tìm Kiếm</button>
+            <div id="searchresults"></div>
+        </li>
+        <li>
+            <a href="cart.html"><button class="cart-btn" onclick="goToCart()">Giỏ hàng</button></a>
+        </li>
+        <li><a href="form_register.html"><button class="acct-btn">Tài khoản</button></a></li>
+        
+        <script src="js/home.js"></script>
+    </div>
+</header>
+
+<!------------------------Product---------------------------->
+<section class="product-detail">
+    <div class="container">
+        <div class="product-content">
+            <div class="product-content-left">
+                <img src="product_img/Adidas/Ba_Lo_adidas_Disney_Lion_King_Xam.jpg">
+            </div>
+
+            <div class="product-content-right">
+                <div class="product-content-right-product-name">
+                    <p>Thường nhật</p>
+                    <h1>Balo Adidas x Lion King</h1>
+                </div>
+
+                <div class="product-content-right-product-price">
+                    <p>990.000đ</p>
+                </div>
+
+                <div class="quantity">
+                    <p style="font-weight: bold;">Số lượng:</p>
+                    <input type="number" min = 0 value="1">
+                </div>
+
+                <div class="product-content-right-product-button">
+                    <button class="add-to-cart-btn">THÊM VÀO GIỎ HÀNG</button>
+                </div>
+
+                <hr>
+
+                <div class="product-content-right-infomation">
+                    <div class="toggle-button" onclick="toggleDescription(this)">
+                        MÔ TẢ <span class="arrow">➔</span>
+                    </div>
+                    <div class="description">
+                        <p>CHIẾC BA LÔ LION KING BẰNG VẢI DỆT CHO TRẺ EM, LÀM TỪ CHẤT LIỆU TÁI CHẾ.</p>
+                        <p>Chiếc ba lô adidas Disney Lion King dành cho trẻ em này giúp bé dễ dàng mang theo các món đồ thiết yếu. Thiết kế nhiều ngăn, gồm một ngăn khóa kéo phía trước và các ngăn ở hai bên, tạo không gian đựng đồ rất tiện lợi.</p>
+                        <p>Sản phẩm này làm từ tối thiểu 50% chất liệu tái chế.</p>
+                    </div>
+
+                    <hr>
+
+                    <div class="toggle-button" onclick="toggleDetails(this)">
+                        THÔNG TIN CHI TIẾT <span class="arrow">➔</span>
+                    </div>
+                    <div class="details">
+                        <ul>
+                            <li>Kích thước: 11 cm x 25 cm x 35 cm</li>
+                            <li>Dung tích: 15 L</li>
+                            <li>Vải dệt tròn làm từ 100% polyester tái chế</li>
+                            <li>Ngăn chính có khóa kéo</li>
+                            <li>Ngăn khóa kéo phía trước</li>
+                            <li>Các ngăn mở hai bên</li>
+                            <li>Quai đeo lót đệm, tùy chỉnh</li>
+                            <li>©Disney</li>
+                            <li>Màu sản phẩm: Carbon / Multicolor</li>
+                            <li>Mã sản phẩm: IW1100</li>
+                        </ul>
+                    </div>
+
+                    <hr>
+                    
+                    <script>
+                        function toggleDescription(button) {
+                            const description = button.nextElementSibling;
+                            const isVisible = description.style.display === 'block';
+                            description.style.display = isVisible ? 'none' : 'block';
+                            button.classList.toggle('expanded', !isVisible);
+                        }
+
+                        function toggleDetails(button) {
+                            const details = button.nextElementSibling;
+                            const isVisible = details.style.display === 'block';
+                            details.style.display = isVisible ? 'none' : 'block';
+                            button.classList.toggle('expanded', !isVisible);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------------------Footer------------------------------>
+<hr>
+
+<footer>
+    <div class="footer-top">
+        <li><a href="">Liên hệ</a></li>
+        <li><a href="">Giới thiệu</a></li>
+    </div>
+    <div class="footer-middle">
+        <p>Đây là website chuyên cung cấp các mẫu mã Balo <br> 
+        Do hai sinh viên Hồ Chí Dũng và Phạm Tân Tiến 
+        thuộc trường Đại học Giao thông Vận tải TP.HCM thực hiện <br>
+        Mọi thắc mác xin liên hệ qua email:<b>2251120408@ut.edu.vn </b>  </p>
+    </div>
+    <div class="footer-bottom">
+        BestBag All rights reserved
+    </div>
+</footer>
+</body>
+</html>

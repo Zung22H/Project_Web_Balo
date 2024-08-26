@@ -12,6 +12,7 @@
     <div class="logo">
         <a href="home.html"><img src="img/logo.jpg" width="80px" height="80px"></a>
     </div>
+
     <div class="menu">
         <li><a href="product_page.html">Sản Phẩm</a></li>
         <li><a href="#">Thể thao</a>
@@ -26,21 +27,21 @@
         </li>
         <li><a href="#">Balo Laptop</a></li>
         <li><a href="#">Túi du lịch</a></li>
-        <li><a href="#">Thông tin</a></li>
-        
+        <li><a href="#">Thông tin</a></li>       
     </div>
+
     <div class="others">
         <li class="searching">
             <input type="text" id="searchinput" placeholder="Search......">
-            <button onclick="searchfunction()">Tìm Kiếm</button>
+            <button class="search-btn" onclick="searchfunction()">Tìm Kiếm</button>
             <div id="searchresults"></div>
         </li>
         <li>
-            <button onclick="goToCart()">Giỏ hàng</button>
+            <a href="cart.html"><button class="cart-btn" onclick="goToCart()">Giỏ hàng</button></a>
         </li>
-        <li><a href="form_register.html"><button >Tài khoản</button></a></li>
+        <li><a href="form_register.html"><button class="acct-btn">Tài khoản</button></a></li>
         
-        <script src="home.js"></script>
+        <script src="js/home.js"></script>
     </div>
 </header>
 
@@ -62,24 +63,7 @@
 </div>
 </section>
 
-<section class="app-container">
-
-</section>
-
-
-<!-- --------------------------Product---------------------------
-<section class="product">
-    <div class="container">
-        <div class="product-img">
-            <img src="product_img/Ba_Lo_Classic.jpg" alt="">
-    </div>
-</section>
-<section class="app-container">
-    <p>Nhận thông tin khuyến mãi từ BestBag</p>
-    <input type="text" placeholder="Mời bạn nhập email.......">
-</section> -->
-
-
+<section class="app-container"></section>
 
 <!-------------------------Footer------------------------------>
 <footer>

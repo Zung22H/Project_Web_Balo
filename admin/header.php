@@ -8,5 +8,5 @@
 </head>
 <body>
     <header>
-        <h1>TOP</h1>
+        <h1>Đây là trang Admin</h1>
     </header>

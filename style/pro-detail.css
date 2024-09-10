@@ -1,0 +1,114 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.product-detail {
+    padding: 20px;
+    
+}
+
+.container-pro-detail {
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+}
+
+.product-content {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    
+}
+
+.product-content-left {
+    height: 400px; /* Chiều cao của phần chứa hình ảnh */
+    overflow: hidden; /* Ẩn phần hình ảnh ngoài vùng chứa */
+}
+
+.product-content-left img {
+    width: 100%;
+    height: 100%; /* Đặt chiều cao của hình ảnh là 100% để tràn đầy */
+    object-fit: cover; /* Đảm bảo hình ảnh tràn đầy mà không bị bóp méo */
+    border-radius: 8px; /* Bo góc cho hình ảnh */
+}
+
+.product-content-right {
+    padding-left: 20px;
+}
+
+.product-content-right-product-name h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-content-right-product-price {
+    font-size: 20px;
+    color: #e74c3c;
+    margin: 0;
+    text-align: center;
+}
+.product-content-right-infomation {
+    padding: 20px; /* Khoảng cách bên trong */
+    background-color: #fff; /* Màu nền */
+    border-radius: 8px; /* Bo góc cho phần mô tả */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.description {
+    display: block; /* Đảm bảo phần mô tả hiển thị */
+    color: #333333; /* Màu chữ */
+}
+
+
+.description>p {
+    margin: 0; /* Bỏ khoảng cách mặc định */
+    padding: 0; /* Bỏ khoảng cách bên trong */
+    font-size: 16px; /* Kích thước chữ */
+    color: #333; /* Màu chữ */
+    line-height: 1.5; /* Khoảng cách giữa các dòng */
+}
+
+
+
+.add-to-cart {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.add-to-cart:hover {
+    background-color: #444;
+}
+
+.shipping-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-top li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-middle {
+    margin: 20px 0;
+}
